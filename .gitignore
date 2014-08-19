@@ -1,0 +1,9 @@
+
+node_modules/
+bower_components/
+js/
+build/
+wallpaper/
+data/
+
+index.html
