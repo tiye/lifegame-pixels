@@ -9,7 +9,7 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "devDependencies": {
-    "mission": "0.0.8-0",
+    "mission": "0.0.8-1",
     "shelljs": "^0.3.0"
   }
 }
