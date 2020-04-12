@@ -1,15 +1,49 @@
 {
-  "name": "her-files",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "webpack-workflow",
+  "version": "0.0.1",
+  "description": "Web app scaffold based on Webpack",
+  "main": "main.js",
   "scripts": {
+    "clean": "rm -rfv dist/*",
+    "watch": "yarn html && webpack-dev-server --config webpack.dev.cirru",
+    "release": "yarn clean && webpack --config webpack.release.cirru && yarn release-html",
+    "release-local": "yarn clean && webpack --config webpack.release.cirru && local=true yarn release-html",
+    "html": "cirruscript template.cirru",
+    "release-html": "env=release cirruscript template.cirru",
+    "up": "yarn release && tiye-up",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jiyinyiyong",
   "license": "MIT",
+  "keywords": [
+    "workflow"
+  ],
   "devDependencies": {
-    "mission": "0.0.8-1",
-    "shelljs": "^0.3.0"
-  }
+    "assets-webpack-plugin": "^3.9.12",
+    "cirru-script": "0.6.2",
+    "cirru-script-loader": "0.5.5",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.5.1",
+    "css-loader": "^3.5.2",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "file-loader": "^6.0.0",
+    "hsl": "^0.1.1",
+    "json-loader": "^0.5.3",
+    "stir-template": "^0.2.2",
+    "style-loader": "^1.1.3",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-hud": "^0.1.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mvc-works/webpack-workflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mvc-works/webpack-workflow/issues"
+  },
+  "homepage": "https://github.com/mvc-works/webpack-workflow"
 }
